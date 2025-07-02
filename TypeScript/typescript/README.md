@@ -55,7 +55,7 @@ awesomeName = 'something';
 awesomeName = awesomeName.toUpperCase();
 // awesomeName = 20;
 ```
-
+28 minutes
 ## Challenge
 
 - Create a variable of type string and try to invoke a string method on it.
