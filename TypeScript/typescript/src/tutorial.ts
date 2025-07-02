@@ -1,12 +1,5 @@
-console.log('typeScript-tutorial');
-interface someValue {
-  name: string;
-  id: number;
-}
 
-let someObj: someValue = {
-  name: 'Bruce',
-  id: 124
-}
-
-console.log(someObj)
+let awesomeName  = 'shakeAndBake'
+awesomeName // type inference
+let amount = 20;
+amount = 12 - 1
