@@ -1,5 +1,70 @@
+/*
+// setting my first types example 1
+let myName: string = 'Garvin'
+myName.toUpperCase()
 
-let awesomeName  = 'shakeAndBake'
-awesomeName // type inference
-let amount = 20;
-amount = 12 - 1
+let myNumber: number = 23
+let yearOlder = myNumber + 1
+console.log(yearOlder)
+
+let truths: boolean = true
+truths = false
+console.log(truths)
+
+// Union Types
+// in the case the value you are expecting is not a string
+let tax: number | string = 10;
+tax = 100;
+tax = '$10';
+
+// in the case that the request, usually when waiting for API requests
+let requestStatus: 'pending' | 'success' | 'error' = 'pending'
+requestStatus = 'success'
+
+// type any
+// this means my variable can be anything I can come up with
+// looks like the way variables behave in JS.
+// be careful of this, just because you can does not mean you should
+let notSure: any = 4;
+let random;
+*/
+
+// exapmle 2
+const books = ['1984', 'Brave New World', 'Fahrenheit 451']
+
+let foundBook:string | undefined;
+
+for (let book of books) {
+  if (book === '1984') {
+    foundBook = book;
+    foundBook = foundBook.toUpperCase()
+    break;
+  }
+}
+
+console.log(
+  foundBook?.length
+);
+
+// challenge #2
+let orderStatus: 'processing' | 'shipped' | 'delivered' = 'processing';
+orderStatus = 'shipped';
+orderStatus = 'delivered';
+
+let discount: number | string = 20;
+discount = '20%';
+
+// Arrays
+let prices: number[] = [100,75,42];
+prices.push(27);
+
+let fruit: string[] = ['apple', 'orange'];
+fruit.push('banana');
+
+let randomValues:[] = []
+// typescript will always show this as an empty array
+
+let emptyValues = [] // this is seeting this variable as type any
+
+let names = ['peter', 'paul', 99]; // type inference
+let array:(string| boolean)[] = ['apple', 'orange', true]
