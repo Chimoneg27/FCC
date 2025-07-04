@@ -27,7 +27,7 @@ requestStatus = 'success'
 // be careful of this, just because you can does not mean you should
 let notSure: any = 4;
 let random;
-*/
+
 
 // exapmle 2
 const books = ['1984', 'Brave New World', 'Fahrenheit 451']
@@ -68,3 +68,26 @@ let emptyValues = [] // this is seeting this variable as type any
 
 let names = ['peter', 'paul', 99]; // type inference
 let array:(string| boolean)[] = ['apple', 'orange', true]
+
+
+// Objects and functions
+let car:{ brand: string; year:number } = { brand: 'toyota', year: 2020 };
+
+let car1:{ brand: string; year:number } = { brand: 'audi', year: 2022 }
+
+let book = {title: 'book', cost:20}
+let pen = {title: 'pen', cost:10}
+let notebook = {title: 'notebook'}
+
+let items:{ readonly title:string; cost?:number }[] = [book, pen, notebook] // array of objects
+// readonly means that the data cannot be overwritten
+*/
+// challenge #4
+let bike:{brand:string; year: number} = {brand: 'carbon', year: 2002}
+let laptop:{brand:string; year: number} = {brand: 'DELL', year: 2022}
+
+
+let console = {title: 'PS5', price:20000}
+let phone = {title: 'iPhone.', price:23000}
+let bread = {title: 'albany'}
+let products:{title:string; price?: number}[] = [console, phone, bread]
