@@ -81,13 +81,21 @@ let notebook = {title: 'notebook'}
 
 let items:{ readonly title:string; cost?:number }[] = [book, pen, notebook] // array of objects
 // readonly means that the data cannot be overwritten
-*/
+
 // challenge #4
 let bike:{brand:string; year: number} = {brand: 'carbon', year: 2002}
 let laptop:{brand:string; year: number} = {brand: 'DELL', year: 2022}
-
 
 let console = {title: 'PS5', price:20000}
 let phone = {title: 'iPhone.', price:23000}
 let bread = {title: 'albany'}
 let products:{title:string; price?: number}[] = [console, phone, bread]
+*/
+
+// challenge #5
+let arrNames:string[] = ['timmy', 'mello', 'AI', 'Ball']
+function checkName(name: string, arr:string[]): boolean {
+  return arr.includes(name)
+}
+
+console.log(checkName('ben', arrNames))
