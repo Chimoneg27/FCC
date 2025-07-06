@@ -90,7 +90,6 @@ let console = {title: 'PS5', price:20000}
 let phone = {title: 'iPhone.', price:23000}
 let bread = {title: 'albany'}
 let products:{title:string; price?: number}[] = [console, phone, bread]
-*/
 
 // challenge #5
 let arrNames:string[] = ['timmy', 'mello', 'AI', 'Ball']
@@ -99,3 +98,16 @@ function checkName(name: string, arr:string[]): boolean {
 }
 
 console.log(checkName('ben', arrNames))
+
+//challenge #6
+const processinput = (input: string|number) => {
+  if (typeof input === 'number') {
+    console.log(input * 2)
+  } else {
+    console.log(input.toLocaleUpperCase())
+  }
+}
+
+processinput(10)
+processinput('Hello')
+*/
