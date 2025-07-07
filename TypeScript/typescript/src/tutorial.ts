@@ -110,18 +110,42 @@ const processinput = (input: string|number) => {
 
 processinput(10)
 processinput('Hello')
-*/
+
 // Challenge #6
 
-const processData = (input: string|number, config: {reverse:boolean} = {reverse: false}) => {
+const processData = (input: string | number, config: { reverse: boolean } = { reverse: false }): string | number => {
   if (typeof input === 'number') {
     return input * 2
-  } else if (typeof input === 'string' && config.reverse === true) {
-    return input.split('').reverse().join('').toUpperCase()
   } else {
-    return input.toUpperCase()
+    return config.reverse ? input.toUpperCase().split('').reverse().join() : input.toUpperCase()
   }
 }
 
-let result = processData('bin', {reverse: true})
+let result = processData(4)
 console.log(result)
+*/
+// ALias and Interface
+
+type User = { id: number; name: string; isActive: boolean }
+
+const john: User = {
+  id: 1,
+  name: 'john',
+  isActive: true,
+};
+const susan: User = {
+  id: 1,
+  name: 'susan',
+  isActive: false,
+};
+
+function createUser(user:User):User{
+  console.log(`Hello there ${user.name.toUpperCase()} !!!`);
+
+  return user;
+}
+
+type Theme = 'light' | 'dark'
+let theme: Theme
+theme = 'dark'
+console.log(theme)
