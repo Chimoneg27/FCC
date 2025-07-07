@@ -149,3 +149,37 @@ type Theme = 'light' | 'dark'
 let theme: Theme
 theme = 'dark'
 console.log(theme)
+
+//challenge#7
+type Employee = {id:number, name:string, department:string}
+type Manager = {id:number, name:string, employees:Employee[]}
+type Staff = Employee | Manager
+
+const printStaffDetails = (staff:Staff) => {
+  if('employees' in staff) {
+    return `${staff.name} is a manager and has ${staff.employees.length} emplyees`
+  } else {
+    return `${staff.name} and works in the ${staff.department} department`
+  }
+}
+
+const employee: Employee = {
+  id: 1,
+  name: 'alice',
+  department: 'HR'
+}
+
+const employee2: Employee = {
+  id:2,
+  name: 'Steve',
+  department: 'Board of Directors'
+}
+
+const manager: Manager = {
+  id: 1,
+  name: 'Gary',
+  employees: [employee, employee2]
+}
+
+const details = printStaffDetails(manager)
+console.log(details)
