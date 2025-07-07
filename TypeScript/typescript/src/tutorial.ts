@@ -111,3 +111,17 @@ const processinput = (input: string|number) => {
 processinput(10)
 processinput('Hello')
 */
+// Challenge #6
+
+const processData = (input: string|number, config: {reverse:boolean} = {reverse: false}) => {
+  if (typeof input === 'number') {
+    return input * 2
+  } else if (typeof input === 'string' && config.reverse === true) {
+    return input.split('').reverse().join('').toUpperCase()
+  } else {
+    return input.toUpperCase()
+  }
+}
+
+let result = processData('bin', {reverse: true})
+console.log(result)
