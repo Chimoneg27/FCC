@@ -183,7 +183,7 @@ const manager: Manager = {
 
 const details = printStaffDetails(alice)
 console.log(details)
-*/
+
 // Interfaces 
 interface Book {
   readonly isbn: number;
@@ -212,3 +212,26 @@ const deepWork: Book = {
 }
 
 const result = deepWork.printTitle('is an awesome book')
+*/
+//challenge#8
+interface Computer {
+  readonly id: number;
+  brand: string;
+  ram: number;
+  storage?: number;
+  upgradeRam:(capacity: number) => number
+}
+
+const hp: Computer = {
+  id: 1,
+  brand: 'hp',
+  ram: 16,
+  storage: 2000,
+  upgradeRam:function(capacity){
+    return this.ram + capacity
+  }
+}
+
+const newComputer = hp;
+const newRam = hp.upgradeRam(16)
+console.log(newComputer, newRam)
