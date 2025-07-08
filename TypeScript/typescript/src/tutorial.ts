@@ -123,7 +123,7 @@ const processData = (input: string | number, config: { reverse: boolean } = { re
 
 let result = processData(4)
 console.log(result)
-*/
+
 // ALias and Interface
 
 type User = { id: number; name: string; isActive: boolean }
@@ -150,12 +150,12 @@ let theme: Theme
 theme = 'dark'
 console.log(theme)
 
-//challenge#7
+//challenge#7 2:04:
 type Employee = {id:number, name:string, department:string}
 type Manager = {id:number, name:string, employees:Employee[]}
 type Staff = Employee | Manager
 
-const printStaffDetails = (staff:Staff) => {
+const printStaffDetails = (staff:Staff):string => {
   if('employees' in staff) {
     return `${staff.name} is a manager and has ${staff.employees.length} emplyees`
   } else {
@@ -163,13 +163,13 @@ const printStaffDetails = (staff:Staff) => {
   }
 }
 
-const employee: Employee = {
+const alice: Employee = {
   id: 1,
   name: 'alice',
   department: 'HR'
 }
 
-const employee2: Employee = {
+const steve: Employee = {
   id:2,
   name: 'Steve',
   department: 'Board of Directors'
@@ -178,8 +178,37 @@ const employee2: Employee = {
 const manager: Manager = {
   id: 1,
   name: 'Gary',
-  employees: [employee, employee2]
+  employees: [alice, steve]
 }
 
-const details = printStaffDetails(manager)
+const details = printStaffDetails(alice)
 console.log(details)
+*/
+// Interfaces 
+interface Book {
+  readonly isbn: number;
+  title: string;
+  author: string;
+  genre?: string;
+  printAuthor(): void
+  printTitle(message:string):string
+  printSomething: (someValue: number) => number
+}
+
+const deepWork: Book = {
+  isbn: 9781455586691,
+  title: 'Deep Work',
+  author: 'Cal Newport',
+  genre: 'Self-help',
+  printAuthor() {
+    console.log(this.author)
+  },
+  printTitle(message){
+    return `${this.title} ${message}`
+  },
+  printSomething:function(someValue){
+    return someValue;
+  }
+}
+
+const result = deepWork.printTitle('is an awesome book')
