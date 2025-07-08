@@ -212,7 +212,7 @@ const deepWork: Book = {
 }
 
 const result = deepWork.printTitle('is an awesome book')
-*/
+
 //challenge#8
 interface Computer {
   readonly id: number;
@@ -235,3 +235,78 @@ const hp: Computer = {
 const newComputer = hp;
 const newRam = hp.upgradeRam(16)
 console.log(newComputer, newRam)
+
+interface Person {
+  name: string;
+  getDetails(): string;
+}
+
+interface DogOwner {
+  dogName: string;
+  getDogDetails(): string;
+}
+
+interface Person {
+  age: number
+}
+
+const person:Person = {
+  name: 'john',
+  age: 30,
+  getDetails(){
+    return `Name: ${this.name}, Age: ${this.age}`
+  }
+}
+*/
+//challenge#9 part1
+interface Person {
+  name: string;
+}
+
+interface DogOwner extends Person {
+  dogName: string;
+}
+
+interface Manager extends Person {
+  managePeople(): void;
+  delegateTasks(): void;
+}
+
+const employee: Person | DogOwner | Manager = getEmployee();
+console.log(employee)
+
+function getEmployee(): Person | DogOwner | Manager {
+
+  const randomNumber = Math.random();
+  if (randomNumber < 0.33) {
+    return {
+      name: 'john'
+    }
+  } else if (randomNumber < 0.66) {
+    return {
+      name: 'sarah',
+      dogName: 'Rex'
+    }
+  } else {
+    return {
+      name: 'bob',
+      managePeople (){
+        console.log('Managing people...')
+      },
+      delegateTasks() {
+        console.log('Delegating tasks people...')
+      }
+    }
+  }
+}
+
+console.log(getEmployee())
+//challenge#9 part2
+
+function isManager(object: Person | DogOwner | Manager):object is Manager {
+  return 'managePeople' in object
+}
+
+if(isManager(employee)) {
+  employee.delegateTasks()
+}
