@@ -332,7 +332,7 @@ function getServerResponse():ServerResponse { // this function must return prope
     data: ['first', 'second']
   }
 }
-*/
+
 // challenge #10
 enum UserRole {
   Admin,
@@ -357,5 +357,37 @@ const user1:User = createUser({
   role: UserRole.Admin,
   contact: ['hakimi@psg.com', '+202022020202']
 })
-// 3:18:30
+
 console.log(user1)
+
+// type assertions
+let someValue:any = 'this is a string'
+let strLength:number = (someValue as string).length
+
+type Bird = {
+  name: string;
+};
+
+// Assume we have a JSON string from an API or local file
+let birdString = '{"name": "Eagle"}';
+let dogString = '{"breed": "Poodle"}';
+
+// Parse the JSON string into an object
+let birdObject = JSON.parse(birdString)as Bird;
+let dogObject = JSON.parse(dogString);
+
+// type unknown
+let unknownValue:unknown;
+unknownValue = 'hello world'
+unknownValue = [1,2,3,4,5]
+unknownValue = 27.0502
+
+if(typeof unknownValue === 'number') {
+  unknownValue.toFixed(2)
+} 
+*/
+// type never
+// let someValue:never =8  you can not assign it to anything
+// type never almost exhaists all the possible cases you have setup and forces you to go back and add the values you will require
+
+// modules in typescript
