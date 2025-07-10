@@ -257,7 +257,7 @@ const person:Person = {
     return `Name: ${this.name}, Age: ${this.age}`
   }
 }
-*/
+
 //challenge#9 part1
 interface Person {
   name: string;
@@ -306,7 +306,56 @@ console.log(getEmployee())
 function isManager(object: Person | DogOwner | Manager):object is Manager {
   return 'managePeople' in object
 }
-
+// 3:02:56
 if(isManager(employee)) {
   employee.delegateTasks()
 }
+
+// Tuples and Enums
+//let person: [string, number] = ['john', 25]
+
+const ServerResponseStatus = {
+  Success: 'Success',
+  Error: 'Error'
+} as const; // allows to define a name of set constants
+
+type ServerResponseStatus = typeof ServerResponseStatus[keyof typeof ServerResponseStatus];
+
+interface ServerResponse{
+  result: ServerResponseStatus;
+  data: string[];
+}
+
+function getServerResponse():ServerResponse { // this function must return properties defined in the ServerResponse interface
+  return {
+    result: ServerResponseStatus.Success,
+    data: ['first', 'second']
+  }
+}
+*/
+// challenge #10
+enum UserRole {
+  Admin,
+  Manager,
+  Employee
+}
+
+type User = {
+  id: number,
+  name: string,
+  role: UserRole,
+  contact: [string, string]
+}
+
+function createUser(obj:User){
+  return obj
+}
+
+const user1:User = createUser({
+  id: 1,
+  name: 'Hakimi',
+  role: UserRole.Admin,
+  contact: ['hakimi@psg.com', '+202022020202']
+})
+// 3:18:30
+console.log(user1)
