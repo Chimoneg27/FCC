@@ -393,3 +393,24 @@ if(typeof unknownValue === 'number') {
 // modules in typescript
 // 3:48:34
 import { susan } from "./actions";
+// Challenge #11
+type ValueType = string | number | boolean;
+
+let value: ValueType;
+const random = Math.random();
+value = random < 0.33 ? 'Hello' : random < 0.66 ? 123.456 : true;
+
+function checkValue(value: ValueType){
+  if(typeof value === 'string'){
+    console.log(value.toLowerCase())
+    return;
+  } else if (typeof value === 'number') {
+    console.log(value.toFixed(2))
+    return;
+  } else {
+    console.log(`boolean: ${value}`)
+  }
+}
+
+let newValue = checkValue(4.56787676)
+console.log(newValue)
