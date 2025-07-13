@@ -400,7 +400,7 @@ let value: ValueType;
 const random = Math.random();
 value = random < 0.33 ? 'Hello' : random < 0.66 ? 123.456 : true;
 
-function checkValue(value: ValueType){
+function checkValue(value: ValueType):void{
   if(typeof value === 'string'){
     console.log(value.toLowerCase())
     return;
@@ -411,6 +411,27 @@ function checkValue(value: ValueType){
     console.log(`boolean: ${value}`)
   }
 }
-
+// 4:03;40
 let newValue = checkValue(4.56787676)
 console.log(newValue)
+
+//Challenge#12
+type Dog = { type: 'dog'; name: string; bark: () => void };
+type Cat = { type: 'cat'; name: string; meow: () => void };
+type Animal = Dog | Cat;
+
+// function makeSound(animal:Animal):void {
+//   if(animal.type === 'dog') {
+//     animal.bark()
+//   } else {
+//     animal.meow()
+//   }
+// }
+
+function makeSound(animal:Animal):void {
+  if('bark' in animal) {
+    animal.bark()
+  } else {
+    animal.meow()
+  }
+}
