@@ -428,10 +428,33 @@ type Animal = Dog | Cat;
 //   }
 // }
 
+//challenge#13
 function makeSound(animal:Animal):void {
   if('bark' in animal) {
     animal.bark()
   } else {
     animal.meow()
+  }
+}
+
+//challenge#14
+function printLength(str: string | null | undefined):void {
+  if(typeof str === 'string') {
+    console.log(str.length)
+  } else {
+    console.log('No string provided')
+  }
+}
+
+printLength('Hello')
+printLength(null)
+printLength(undefined)
+
+//challenge#15
+function checkInput(input: Date |string) {
+  if (input instanceof Date) {
+    return input.getFullYear().toString()
+  } else {
+    return input
   }
 }
