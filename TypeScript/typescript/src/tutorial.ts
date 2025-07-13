@@ -385,7 +385,7 @@ unknownValue = 27.0502
 if(typeof unknownValue === 'number') {
   unknownValue.toFixed(2)
 } 
-*/
+
 // type never
 // let someValue:never =8  you can not assign it to anything
 // type never almost exhaists all the possible cases you have setup and forces you to go back and add the values you will require
@@ -458,3 +458,72 @@ function checkInput(input: Date |string) {
     return input
   }
 }
+*/
+//challenge#16
+type Student = {
+  name: string;
+  study: () => void;
+};
+
+type User = {
+  name: string;
+  login: () => void;
+};
+
+type Person = Student | User;
+
+const randomPerson = (): Person => {
+  return Math.random() > 0.5
+    ? { name: 'john', study: () => console.log('Studying') }
+    : { name: 'mary', login: () => console.log('Logging in') };
+};
+
+const person = randomPerson();
+
+function isStudent(person:Person): person is Student {
+  return (person as Student).study !== undefined
+}
+
+if(isStudent(person)) {
+  person.study()
+} else {
+  person.login()
+}
+
+//Challenge#17
+type IncrementAction = {
+  type: 'increment';
+  amount: number;
+  timestamp: number;
+  user: string;
+};
+
+type DecrementAction = {
+  type: 'decrement';
+  amount: number;
+  timestamp: number;
+  user: string;
+};
+
+type Action = IncrementAction | DecrementAction;
+
+function reducer(state: number, action: Action): number {
+  switch (action.type) {
+    case 'increment':
+      return state + action.amount;
+    case 'decrement':
+      return state - action.amount;
+
+    default:
+      const unexpectedAction: never = action;
+      throw new Error(`Unexpected action: ${unexpectedAction}`)
+  }
+}
+
+const newState = reducer(15, {
+  user: 'john',
+  type: 'increment',
+  amount: 5,
+  timestamp: 123456,
+});
+// 4:30:50
