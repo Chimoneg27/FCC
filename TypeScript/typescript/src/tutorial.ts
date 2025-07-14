@@ -458,7 +458,7 @@ function checkInput(input: Date |string) {
     return input
   }
 }
-*/
+
 //challenge#16
 type Student = {
   name: string;
@@ -527,3 +527,18 @@ const newState = reducer(15, {
   timestamp: 123456,
 });
 // 4:30:50
+*/
+// Generics
+
+/* 
+interface Array<T> { // this shows that the array can be any type. Number, boolean, string even our own custom types
+  we also get the array methods 
+}
+
+let array1:Array<string> = ['Apple', 'Banana', 'Mango']
+basically an allrounder function
+4:44:56
+*/
+function genericFunction<T>(arg: T): T {
+  return arg
+}
