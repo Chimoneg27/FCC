@@ -527,10 +527,10 @@ const newState = reducer(15, {
   timestamp: 123456,
 });
 // 4:30:50
-*/
+
 // Generics
 
-/* 
+
 interface Array<T> { // this shows that the array can be any type. Number, boolean, string even our own custom types
   we also get the array methods 
 }
@@ -538,7 +538,7 @@ interface Array<T> { // this shows that the array can be any type. Number, boole
 let array1:Array<string> = ['Apple', 'Banana', 'Mango']
 basically an allrounder function
 4:44:56
-*/
+
 function genericFunction<T>(arg: T): T {
   return arg
 }
@@ -554,3 +554,24 @@ function createArray<T>(length: number, value: T): Array<T> {
   result = Array(length).fill(value);
   return result
 }
+
+const { data } = axios.get(someUrl);
+
+axios.get<{ name: string }[]>(someUrl);
+
+export class Axios {
+  get<T = any, R = AxiosResponse<T>, D = any>(
+    url: string,
+    config?: AxiosRequestConfig<D>
+  ): Promise<R>;
+}
+
+export interface AxiosResponse<T = any, D = any> {
+  data: T;
+  status: number;
+  statusText: string;
+  headers: RawAxiosResponseHeaders | AxiosResponseHeaders;
+  config: InternalAxiosRequestConfig<D>;
+  request?: any;
+}
+*/
