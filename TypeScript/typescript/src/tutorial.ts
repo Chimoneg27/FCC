@@ -610,4 +610,19 @@ const tours = await fetchData(url);
 tours.map((tour) => {
   console.log(tour.name);
 });
+5:22:55
 */
+// Zod Library
+import {z} from "zod";
+const url = 'https://www.course-api.com/react-tours-project';
+
+const tourSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  info: z.string(),
+  image: z.string(),
+  price: z.string(),
+  something: z.string()
+})
+
+type Tour = z.infer<typeof tourSchema>
