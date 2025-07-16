@@ -611,7 +611,7 @@ tours.map((tour) => {
   console.log(tour.name);
 });
 5:22:55
-*/
+
 // Zod Library
 import {z} from "zod";
 const url = 'https://www.course-api.com/react-tours-project';
@@ -626,3 +626,5 @@ const tourSchema = z.object({
 })
 
 type Tour = z.infer<typeof tourSchema>
+*/
+// Typescript Declaration File
