@@ -14,7 +14,7 @@ function Component() {
     const data = Object.fromEntries(formData)
     console.log(data);
   }
-
+// 7:40:35
   return (
     <section>
       <h2>Events example</h2>
