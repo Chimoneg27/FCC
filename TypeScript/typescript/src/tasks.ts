@@ -63,3 +63,4 @@ function renderTask(task:Task):void {
 function updateStorage():void {
   localStorage.setItem('tasks', JSON.stringify(tasks))
 }
+//6:47:15
