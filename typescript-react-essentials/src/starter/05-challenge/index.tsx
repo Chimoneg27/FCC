@@ -21,7 +21,7 @@ function Component(props: ProfileCardProps) {
     )
   }
   return (
-    <article>
+    <article className="alert alert-danger">
       <h2>user: {name}</h2>
       <h2>email: {props.email}</h2>
     </article>
