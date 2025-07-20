@@ -8,7 +8,7 @@ type AdvancedProfileCardProps = {
   name: string;
   email: string;
 }
-
+// 7:55:10
 type ProfileCardProps = BasicProfileCardProps | AdvancedProfileCardProps;
 
 function Component(props: ProfileCardProps) {
