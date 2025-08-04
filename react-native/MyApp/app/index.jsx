@@ -1,4 +1,10 @@
-import { View, Text, StyleSheet, ImageBackground, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Pressable,
+} from "react-native";
 import { Link } from "expo-router";
 import React from "react";
 import icedCoffeeImg from "@/assets/images/iced-coffee.png";
@@ -12,10 +18,15 @@ const app = () => {
         style={styles.image}
       >
         <Text style={styles.title}>Coffee Shop</Text>
-        <Link href="/contact" style={{marginHorizontal: 'auto'}} asChild>
-        <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>Contact Us</Text>
-        </Pressable>
+        <Link href="/contact" style={{ marginHorizontal: "auto" }} asChild>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Contact Us</Text>
+          </Pressable>
+        </Link>
+        <Link href="/menu" style={{ marginHorizontal: "auto", marginTop: 10 }} asChild>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Our Menu</Text>
+          </Pressable>
         </Link>
       </ImageBackground>
     </View>
@@ -53,17 +64,19 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     textDecorationLine: "underline",
     padding: 4,
-  } ,button: {
-      height: 60,
-      borderRadius: 20,
-      justifyContent: 'center',
-      backgroundColor: 'rgba(0, 0, 0, 0.75)',
-      padding: 6
-    }, buttonText: {
+  },
+  button: {
+    height: 60,
+    borderRadius: 20,
+    justifyContent: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.75)",
+    padding: 6,
+  },
+  buttonText: {
     color: "white",
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
     padding: 4,
-  }
+  },
 });

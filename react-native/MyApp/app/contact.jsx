@@ -11,7 +11,7 @@ export default function TabTwoScreen() {
       </Text>
 
       <View style={styles.balanceCard}>
-        <Text style={styles.cardTitle}>Kasi Wallet</Text>
+        <Text style={styles.cardTitle}>Wallet</Text>
         <Text style={styles.balance}>R 200.00</Text>
       </View>
 
