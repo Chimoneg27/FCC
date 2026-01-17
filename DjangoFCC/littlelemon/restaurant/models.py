@@ -16,3 +16,6 @@ class Booking(models.Model):
 class Menu(models.Model):
    name = models.CharField(max_length=255)
    price = models.IntegerField()
+   
+   def __str__(self):
+      return self.name
